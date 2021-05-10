@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Tabela</h1>
+    </div>
+    <table class="table-striped table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Codico</th>
+                <th>Duração</th>
+                <th>rating</th>
+                <th>releaseDate</th>
+                <th>Options</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let a of courses">
+                <td>{{a.name}}</td>
+                <td>{{a.price}}</td>
+                <td>{{a.code}}</td>
+                <td>{{a.duration}}</td>
+                <td>
+                    <app-stars [rating]='a.rating'></app-stars>
+                    
+                </td>
+                <td>{{a.releaseDate}}</td>
+                <td><img [src]="a.imageUrl" alt=""></td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    
+</body>
+</html>
